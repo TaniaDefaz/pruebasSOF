@@ -13,7 +13,10 @@
  use Filament\Models\Contracts\FilamentUser;
  use Illuminate\Database\Eloquent\Factories\HasFactory;
  use Illuminate\Foundation\Auth\User as Authenticatable;
- use Jeffgreco13\FilamentBreezy\Traits\TwoFactorAuthenticatable;
+ //use Jeffgreco13\FilamentBreezy\Traits\TwoFactorAuthenticatable;
+ use App\Traits\HasProfilePhoto;
+use Laravel\Jetstream\HasProfilePhoto as JetstreamHasProfilePhoto;
+use Laravel\Fortify\TwoFactorAuthenticatable;
 
 /**
  * Class User
@@ -36,7 +39,7 @@
  */
 class User extends Authenticatable implements FilamentUser
 {
-	use HasApiTokens, HasFactory, Notifiable, TwoFactorAuthenticatable, HasRoles;
+	use HasApiTokens, HasFactory, Notifiable, TwoFactorAuthenticatable, HasRoles, JetstreamHasProfilePhoto;
 
 	protected $table = 'users';
 

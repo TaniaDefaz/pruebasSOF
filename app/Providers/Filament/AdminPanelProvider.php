@@ -206,7 +206,7 @@ class AdminPanelProvider extends PanelProvider
                     slug: 'perfil'
                 )
                 ->enableTwoFactorAuthentication(
-                    force: false,
+                    force: true,
                 ),
                 FilamentSpatieRolesPermissionsPlugin::make()
             ])
